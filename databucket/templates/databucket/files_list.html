@@ -1,0 +1,14 @@
+<h1>Files</h1>
+{% if files_list %}
+<ul>
+    {% for file in files_list %}
+    <li>
+        {{ file.pk }} . {{ file.title }} | <a href="{% url 'databucket:delete' file.pk %}" >Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h2> There are no files</h2>
+{% endif %}
+<br>
+Go back to<a href="{% url 'databucket:menu' %}">Menu</a>

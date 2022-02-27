@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  sqlite3:
+    container_name: db
+    image: keinos/sqlite3:latest
+    stdin_open: true
+    tty : true
+    volumes:
+      - ./db:/root/db/
+    ports:
+      - 9000:9000
+    restart: unless-stopped
+  django:
+   build: .
+   container_name: django
+   environment:
+      - DB_PASS=password
+   depends_on:
+      - sqlite3
+   volumes:
+      - .:/fileshare
+   ports:
+      - "8000:8000"
+   command:  bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
