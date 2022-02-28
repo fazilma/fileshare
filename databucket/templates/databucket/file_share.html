@@ -1,0 +1,8 @@
+<h1>The file share Project</h1>
+{% if file_url %}
+The URL is <textarea cols="100" readonly>{{ file_url }}</textarea>
+{% else %}
+Error sharing file
+{% endif %}
+<br>
+Go back to<a href="{% url 'databucket:menu' %}">Menu</a>

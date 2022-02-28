@@ -1,12 +1,19 @@
 <h1>Files</h1>
 {% if files_list %}
-<ul>
+<table>
+<thead><td>ID</td><td>Title</td><td>Description</td><td>To Delete</td><td>To Share</td></thead>
     {% for file in files_list %}
-    <li>
-        {{ file.pk }} . {{ file.title }} | <a href="{% url 'databucket:delete' file.pk %}" >Delete</a>
-    </li>
+    <tbody>
+    <tr>
+    <td>{{ file.pk }} </td>
+    <td> {{ file.title }} </td>
+    <td> {{ file.description }} </td>
+    <td><a href="{% url 'databucket:delete' file.pk %}" >Delete</a></td>
+    <td><a href="{% url 'databucket:file_share' file.pk %}" >Share</a></td>
+    </tr>
+</tbody>
     {% endfor %}
-</ul>
+</table>
 {% else %}
 <h2> There are no files</h2>
 {% endif %}
