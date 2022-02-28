@@ -23,7 +23,7 @@ once the program is up
 create a superuser // https://docs.djangoproject.com/en/1.8/intro/tutorial02/#creating-an-admin-user
 
 then go to 12.0.0.1:8000/admin
-enter the user name and password created for the superuser
+enter the user name and password created for the superuser,
 once logged in as a super user, create users
 
 then go to 12.0.0.1:8000/ 
