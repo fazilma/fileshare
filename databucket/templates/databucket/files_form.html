@@ -1,0 +1,10 @@
+<h1>Upload the file</h1>
+{% load crispy_forms_tags %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form|crispy }}
+    </table>
+    <input type="submit" value="Submit">
+    <input type="submit" onclick="window.location='{% url 'databucket:menu' %}' ; return false;" value="Cancel">
+  </form>

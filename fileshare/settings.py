@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'databucket.apps.DatabucketConfig'
+    'databucket.apps.DatabucketConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

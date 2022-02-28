@@ -7,7 +7,7 @@ class Files(models.Model):
     title = models.CharField(
         max_length=200
     )
-    decription = models.CharField(
+    description = models.CharField(
         max_length=2000
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
